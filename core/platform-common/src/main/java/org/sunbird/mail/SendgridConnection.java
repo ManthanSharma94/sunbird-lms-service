@@ -16,8 +16,10 @@ public class SendgridConnection {
   private Properties props = null;
   private String host;
 
-  private String Is_TLS_Enable;
+  private String Is_TLS_EnableIs_TLS_Enable;
   private String port;
+
+  private String isTlsEnabled;
   private String userName;
   private String password;
   private String fromEmail;
@@ -55,7 +57,7 @@ public class SendgridConnection {
       props.put("mail.smtp.auth", "true");
       props.put("mail.smtp.port", port);
 
-      if(Is_TLS_Enable =="true")
+      if("true".equalsIgnoreCase(isTlsEnabled))
       {
         props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.ssl.protocols", "TLSv1.2");
@@ -89,6 +91,6 @@ public class SendgridConnection {
     userName = PropertiesCache.getInstance().getProperty(JsonKey.EMAIL_SERVER_USERNAME);
     password = PropertiesCache.getInstance().getProperty(JsonKey.EMAIL_SERVER_PASSWORD);
     fromEmail = PropertiesCache.getInstance().getProperty(JsonKey.EMAIL_SERVER_FROM);
-    Is_TLS_Enable = PropertiesCache.getInstance().getProperty(JsonKey.IS_TLS_ENABLE);
+    isTlsEnabled = PropertiesCache.getInstance().getProperty(JsonKey.IS_TLS_ENABLE);
   }
 }
