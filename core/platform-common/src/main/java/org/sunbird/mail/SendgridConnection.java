@@ -16,7 +16,6 @@ public class SendgridConnection {
   private Properties props = null;
   private String host;
 
-  private String Is_TLS_EnableIs_TLS_Enable;
   private String port;
 
   private String isTlsEnabled;
